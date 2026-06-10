@@ -1,0 +1,18 @@
+{
+	"node": "n8n-nodes-parsedoc.parseDoc",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Finance & Accounting", "Data & Storage"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/chris0778/n8n-nodes-parsedoc?tab=readme-ov-file"
+			}
+		],
+		"credentialDocumentation": [
+			{
+				"url": "https://github.com/chris0778/n8n-nodes-parsedoc?tab=readme-ov-file#credentials"
+			}
+		]
+	}
+}

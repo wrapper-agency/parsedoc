@@ -1,0 +1,33 @@
+{
+  "name": "parsedoc-mcp",
+  "version": "0.1.2",
+  "mcpName": "com.wrapper-agency.parsedoc/parser",
+  "description": "MCP server for ParseDoc — parse receipts & invoices into structured JSON, paying per call with USDC (x402 on Base). No API key needed.",
+  "homepage": "https://parsedoc.wrapper-agency.com",
+  "type": "module",
+  "bin": {
+    "parsedoc-mcp": "./server.mjs"
+  },
+  "files": [
+    "server.mjs",
+    "README.md"
+  ],
+  "keywords": [
+    "mcp",
+    "x402",
+    "receipt",
+    "invoice",
+    "ocr",
+    "parsing",
+    "agent",
+    "usdc",
+    "base"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@x402/fetch": "^2.14.0",
+    "viem": "^2.0.0",
+    "zod": "^3.23.0"
+  }
+}

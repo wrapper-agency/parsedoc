@@ -1,0 +1,36 @@
+{
+  "name": "Receipt → Accounting Line (ParseDoc)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a1111111-1111-4111-8111-111111111111",
+      "name": "When clicking Test workflow",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "operation": "accountingLine",
+        "source": "url",
+        "documentUrl": "https://parsedoc.wrapper-agency.com/sample-receipt.png"
+      },
+      "id": "b2222222-2222-4222-8222-222222222222",
+      "name": "ParseDoc",
+      "type": "n8n-nodes-parsedoc.parseDoc",
+      "typeVersion": 1,
+      "position": [240, 0]
+    }
+  ],
+  "connections": {
+    "When clicking Test workflow": {
+      "main": [[{ "node": "ParseDoc", "type": "main", "index": 0 }]]
+    }
+  },
+  "pinData": {},
+  "settings": { "executionOrder": "v1" },
+  "meta": {
+    "templatecredsSetupCompleted": true,
+    "description": "Parse a receipt image URL into a single accounting-ready row (date, merchant, total, tax, category) with the ParseDoc community node. Uses the free demo tier; add ParseDoc API credentials to bill per page. Swap the ParseDoc node's output into a Google Sheets / Airtable / database node to log expenses automatically."
+  }
+}
