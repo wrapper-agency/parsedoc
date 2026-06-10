@@ -1,10 +1,12 @@
-# Publishes n8n-nodes-parsedoc to npm WITH provenance.
-# Required by n8n's verified-community-node program (since 2026-05-01): verified
-# nodes must be published via GitHub Actions with a provenance statement, not from
-# a local machine. After a successful run, submit the node via the n8n Creator Portal.
+# Publishes n8n-nodes-parsedoc to npm WITH provenance, using npm Trusted Publishing
+# (OIDC) — no NPM_TOKEN secret needed. Required by n8n's verified-community-node
+# program (since 2026-05-01): verified nodes must be published via GitHub Actions
+# with a provenance statement, not from a local machine.
 #
-# Setup: add a repository secret NPM_TOKEN (npm automation/granular token with
-# write access to n8n-nodes-parsedoc), then run this workflow (Actions tab → Run).
+# One-time setup (on npmjs.com, package n8n-nodes-parsedoc → Settings → Trusted
+# Publisher): add a GitHub Actions publisher → org/repo = wrapper-agency/parsedoc,
+# workflow = publish-n8n-node.yml. Then run this workflow (Actions tab → Run),
+# and submit the node via the n8n Creator Portal.
 name: Publish n8n node (provenance)
 
 on:
@@ -15,7 +17,7 @@ on:
 
 permissions:
   contents: read
-  id-token: write # required for npm provenance
+  id-token: write # required for npm provenance / trusted publishing
 
 jobs:
   publish:
@@ -29,8 +31,7 @@ jobs:
         with:
           node-version: 22
           registry-url: "https://registry.npmjs.org"
+      - run: npm install -g npm@latest # trusted publishing needs npm >= 11.5.1
       - run: npm install
       - run: npm run build
       - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
