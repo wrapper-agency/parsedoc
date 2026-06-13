@@ -1,6 +1,6 @@
 # ParseDoc
 
-**Receipts & invoices → clean, structured accounting JSON.** Built for AI agents and automations (n8n, Make, Zapier).
+**Receipts, invoices & bank statements → clean, structured CSV/JSON.** Built for people (free web tools), AI agents, and automations (n8n, Make, Zapier).
 
 POST an image or PDF, get back `merchant`, `date`, `line_items`, `tax`, `total`, `category` and a `confidence` score — the **same strict schema every time**. Failed parses are never billed.
 
@@ -74,6 +74,15 @@ Install via *Settings → Community Nodes → `n8n-nodes-parsedoc`*. Source in [
   "warnings": []
 }
 ```
+
+## Free tools & data
+
+No code needed — free to use, and free to link or embed on your own site:
+
+- **[Convert receipts & invoices to CSV](https://parsedoc.wrapper-agency.com/convert)** — drop a photo or PDF, download a clean CSV. No signup, nothing stored.
+- **[Bank statement to CSV](https://parsedoc.wrapper-agency.com/bank-statement-to-csv)** — every transaction with date, description, signed amount and running balance.
+- **[Document Format Library](https://parsedoc.wrapper-agency.com/formats)** — exact fields and CSV layouts per document type and vendor (Chase, Bank of America, Amex, Amazon, Uber, supplier invoices, and more).
+- **[Embeddable widget](https://parsedoc.wrapper-agency.com/embed)** — add the converter to your blog or tools page with one `<iframe>`.
 
 ## Links
 
